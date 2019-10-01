@@ -29,21 +29,13 @@ def on_message(client, userdata, msg):
     if msg.payload == "On":
         print("Received message #1, do something")
         # Do something
-        turnOn()
-
+        
 
     if msg.payload == "Off!":
         print("Received message #2, do something else")
         # Do something else
-        turnOff()
+        
 
-
-def turnOn():
-    # set relay to turn on
-    GPIO.output(2, GPIO.HIGH)
-
-def turnOff():
-      GPIO.output(2, GPIO.LOW)
 
     
  
@@ -53,7 +45,7 @@ client.username_pw_set(username="username",password="Jps040697")
 client.on_connect = on_connect
 client.on_message = on_message
  
-client.connect("192.168.1.29", 1883, 60)
+client.connect("192.168.101.146", 1883, 60)
  
 # Process network traffic and dispatch callbacks. This will also handle
 # reconnecting. Check the documentation at
